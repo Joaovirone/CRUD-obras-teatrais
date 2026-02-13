@@ -1,8 +1,9 @@
 package Manager.TeatroManager.entity;
 
-import java.text.DateFormat;
+
 import java.time.LocalDate;
-import java.util.UUID;
+import java.util.Objects;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,8 +19,9 @@ import lombok.Data;
 public class Obra {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
 
     @Column(name="nome_da_obra",nullable=false)
     private String nome;
@@ -41,5 +43,28 @@ public class Obra {
 
     @Column(name="nota_da_obra", length=10)
     private Integer nota;
+
+
+    
+    //Equals 
+    @Override
+    public boolean equals(Object object){
+        if (object == null || getClass() != object.getClass()) return false;
+        Obra obra = (Obra) object;
+
+        return Objects.equals(id, obra.id);
+        
+    }
+    //HashCode
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(id);
+    }
+
+    //toString
+    @Override
+    public String toString(){
+        return "Obra{" + "id=" + id + '}';
+    }
 
 }
