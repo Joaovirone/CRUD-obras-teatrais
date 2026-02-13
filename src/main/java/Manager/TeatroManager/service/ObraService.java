@@ -33,7 +33,7 @@ public class ObraService {
     @Transactional
     public Obra salvar(Obra obra){
 
-        // Regra de negócio simples: Zera o ID para garantir que é uma criação, não atualização
+        
 
         obra.setId(null);
 
