@@ -28,7 +28,7 @@ public class Obra {
     private String nome;
 
     @Column(name="data_da_obra",columnDefinition="")
-    private LocalDateTime dataAssistida;
+    private LocalDateTime data;
 
     @Column(name="local_da_obra")
     private String local;
