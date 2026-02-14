@@ -8,11 +8,13 @@ import Manager.TeatroManager.entity.Obra;
 
 public interface ObraRepository extends JpaRepository<Obra, Long> {
     
-    List<Obra> findByNomeContainigIgnoreCase(String nome);
+    List<Obra> findByNomeContainingIgnoreCase(String nome);
 
-    Optional<Obra> findObraByDate(LocalDateTime dataAssistida);
+    Optional<Obra> findObraByData(LocalDateTime data);
 
-    List<Obra> findObraByNomeDiretor(String diretor);
+    List<Obra> findByDiretorContainingIgnoreCase(String diretor);
 
     Optional<Obra> findObraByDescricao(String descricao);
+
+  
 }
