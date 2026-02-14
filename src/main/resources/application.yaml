@@ -1,3 +1,41 @@
 spring:
   application:
     name: TeatroManager
+  flyway: 
+    enabled: false
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5001/teatroManager
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:5002
+
+
+  jpa:
+    hibernate:
+
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 5002
+
+springdoc:
+  swagger-api:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+loggin:
+  level:
+    org.springframework.security: DEBUG
