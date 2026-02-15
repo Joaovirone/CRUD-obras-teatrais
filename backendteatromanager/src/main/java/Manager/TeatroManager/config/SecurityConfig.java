@@ -61,15 +61,6 @@ public class SecurityConfig {
         return source;
     }
 
-    @Bean
-    public JwtDecoder jwtDecoder() {
-        SecretKey secretKey = new SecretKeySpec(
-            this.jwtSecret.getBytes(),
-            "HmacSHA256"
-        );
-        return NimbusJwtDecoder.withSecretKey(secretKey).build();
-    }
-
     @Bean 
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
