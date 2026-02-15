@@ -13,9 +13,7 @@ public class ObraResquestDTO {
     @NotBlank
     @NotNull(message="Necessário nome da Obra !")
     String nome; 
-
-    
-    LocalDate dataAssistida; 
+    LocalDate data; 
     String local; 
     String diretor; 
     String elenco; 

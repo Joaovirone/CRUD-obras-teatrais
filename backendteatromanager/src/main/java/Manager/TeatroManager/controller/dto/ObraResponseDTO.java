@@ -9,7 +9,7 @@ import lombok.Data;
 public class ObraResponseDTO {
     
     String nome; 
-    LocalDate dataAssistida; 
+    LocalDate data; 
     String local; 
     String diretor; 
     String elenco; 
