@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("/api/obras")
+@RequestMapping("/api/v1/obras")
 @CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class ObraController {
@@ -36,7 +36,7 @@ public class ObraController {
     @Autowired
     private ObraService service;
 
-    @PostMapping("/obras")
+    @PostMapping
     public ResponseEntity <ObraResponseDTO> criarObra(@RequestBody @Valid ObraResquestDTO obraDTO) {
         
         Obra obra = ObraMapper.toObra(obraDTO);
