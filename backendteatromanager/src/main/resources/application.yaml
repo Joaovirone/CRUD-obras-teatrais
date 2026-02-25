@@ -2,28 +2,27 @@ spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: TeatroManager
+    name: ObrasTeatrais
   
   datasource:
-    url: jdbc:postgresql://db:5432/teatroManager
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
-  # REMOVA ou COMENTE a seção spring.security.oauth2 se ela estiver assim:
-  # security:
-  #   oauth2:
-  #     resourceserver:
-  #       jwt: <--- O erro acontece aqui se estiver vazio ou mal formatado
+  flyway:
+    enabled: true
+    user: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    locations: classpath:db/migration
+    baseline-on-migrate: true
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-        # Removi o dialect conforme o aviso (WARN) do seu log
     open-in-view: false
 
 jwt:
