@@ -27,7 +27,7 @@ public class Obra {
     @Column(name="nome_da_obra",nullable=false)
     private String nome;
 
-    @Column(name="data_da_obra",columnDefinition="")
+    @Column(name="data_da_obra")
     private LocalDate data;
 
     @Column(name="local_da_obra")
