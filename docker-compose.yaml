@@ -2,11 +2,11 @@ services:
 
   db:
     image: postgres:16-alpine
-    container_name: db-teatro-manager
+    container_name: db-obras-teatrais
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: teatroManager
+      POSTGRES_DB: obrasteatrais
     ports:
       - "5001:5432"
     volumes:
@@ -20,11 +20,13 @@ services:
     container_name: backend-teatro-manager
     ports:
       - "5002:5002"
+      
     environment:
-      # Note que aqui usamos 'db' que é o nome do serviço acima
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/teatroManager
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/obrasteatrais
       - SPRING_DATASOURCE_USERNAME=${DB_USER}
       - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_FLYWAY_USER=${DB_USER}
+      - SPRING_FLYWAY_PASSWORD=${DB_PASSWORD}
       - JWT_SECRET=${JWT_SECRET}
     depends_on:
       - db
