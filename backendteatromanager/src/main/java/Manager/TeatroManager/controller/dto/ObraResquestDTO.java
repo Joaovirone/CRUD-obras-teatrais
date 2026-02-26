@@ -14,9 +14,9 @@ public class ObraResquestDTO {
    @NotNull(message="Necessário nome da Obra !")
    private String nome; 
 
-   @JsonFormat(pattern="yyyy-MM-dd")
+   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
    private LocalDate data; 
-   
+
    private String local; 
    private String diretor; 
    private String elenco; 
