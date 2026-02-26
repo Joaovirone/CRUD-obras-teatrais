@@ -8,11 +8,11 @@ import lombok.Data;
 @Data
 public class ObraResponseDTO {
     
-    String nome; 
-    LocalDate data; 
-    String local; 
-    String diretor; 
-    String elenco; 
-    String descricao;
-    Integer nota;
+    private String nome; 
+    private LocalDate data; 
+    private String local; 
+    private String diretor; 
+    private String elenco; 
+    private String descricao;
+    private Integer nota;
 }

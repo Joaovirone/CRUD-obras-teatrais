@@ -10,15 +10,16 @@ import lombok.Data;
 @Data
 public class ObraResquestDTO {
     
-    @NotBlank
-    @NotNull(message="Necessário nome da Obra !")
-    String nome; 
+   @NotBlank
+   @NotNull(message="Necessário nome da Obra !")
+   private String nome; 
 
-    @JsonFormat(pattern="yyyy-MM-dd")
-    LocalDate data; 
-    String local; 
-    String diretor; 
-    String elenco; 
-    String descricao;
-    Integer nota;
+   @JsonFormat(pattern="yyyy-MM-dd")
+   private LocalDate data; 
+   
+   private String local; 
+   private String diretor; 
+   private String elenco; 
+   private String descricao;
+   private Integer nota;
 }

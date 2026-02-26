@@ -9,9 +9,9 @@ public class UsuarioRequestDTO {
  
     @NotBlank
     @NotNull(message="Email é obrigatório !")
-    String username; 
+    private String username; 
 
     @NotBlank
     @NotNull(message="Senha é obrigatória !")
-    String password;
+    private String password;
 }
